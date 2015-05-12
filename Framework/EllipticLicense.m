@@ -216,7 +216,9 @@
 		ECDSA_SIG_free(signature);
 		return NO;
     }
-
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
 	size_t partLen = [signatureData length]/2;
 	signature->r = BN_bin2bn([signatureData bytes], partLen, signature->r);
 	signature->s = BN_bin2bn([signatureData bytes] + partLen, partLen, signature->s);
@@ -224,7 +226,8 @@
 		ECDSA_SIG_free(signature);
 		return NO;		
 	}
-
+#pragma clang diagnostic pop
+    
     uint8_t digest[digestLength];
     el_compute_digest([name UTF8String], digest, digestLength);
 

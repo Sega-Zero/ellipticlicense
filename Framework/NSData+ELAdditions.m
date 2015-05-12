@@ -41,6 +41,8 @@
 	if (! [encoded canBeConvertedToEncoding:NSASCIIStringEncoding]) return nil;
 	const char *chars = [encoded UTF8String]; // avoids using characterAtIndex.
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
 	int bytesLen = el_base32_decode_buffer_size(strlen(chars));
 	uint8_t bytes[bytesLen];
 
@@ -65,6 +67,7 @@
 
 	return [NSString stringWithCString:chars encoding:NSASCIIStringEncoding];
 }
+#pragma clang diagnostic pop
 
 - (NSData *)el_sha1Digest;
 {
