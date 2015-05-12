@@ -5,7 +5,7 @@ s.version      = "0.1.0"
 s.summary      = "Short product key generation and validation framework based on elliptic curves digital signatures (ECDSA). for Mac OS X/Cocoa."
 
 s.homepage     = "https://github.com/vslavik/ellipticlicense"
-s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+s.license      = { :type => "MIT", :file => "LICENSE" }
 
 s.author             = { "Václav Slavík" => "vaclav@slavik.io" }
 
