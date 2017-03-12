@@ -18,9 +18,9 @@ s.source_files = "Framework/*.{h,m}", "c_api/*.{h,c}"
 s.frameworks   = "Cocoa"
 
 s.requires_arc = true
-s.xcconfig     = { 'OTHER_LDFLAGS' => '-lObjC'}
+s.xcconfig     = { 'OTHER_LDFLAGS' => '-lObjC', 'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/OpenSSL-OSX/lib'}
 
-s.dependency  'OpenSSL-Universal'
+s.dependency  'OpenSSL-OSX'
 s.libraries  = 'crypto', 'ssl'
 
 end
