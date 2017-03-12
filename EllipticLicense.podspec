@@ -21,5 +21,6 @@ s.requires_arc = true
 s.xcconfig     = { 'OTHER_LDFLAGS' => '-lObjC'}
 
 s.dependency  'OpenSSL-Universal'
+s.libraries  = 'crypto', 'ssl'
 
 end
